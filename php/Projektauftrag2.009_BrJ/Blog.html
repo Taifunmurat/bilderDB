@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="stylesheet.css">
+		<title>Blog</title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="anmeldung.js"></script>
+		<?php include("blog.php"); include("logout.php");?>
+	</head>
+	<body>
+		<div class="sites">
+			<form id="blog">
+				<nav class="navigation">
+					<a id="Login" href="Login.html">Login</a>
+					<a id="Registration" href="Index.html">Registration</a>
+					<a id="Aendern">Post bearbeiten</a>
+					<a id="Loeschen">Post löschen</a>
+					<a href="Admin.html">Admin Bereich</a>
+					<a id="Logout">Logout</a>
+				</nav>
+				<h1>Blog</h1>
+				<div id="errorspace">
+				</div>
+				<div id="informationspace">
+				</div>
+
+				<div id="createblog">
+					<textarea id="newblog" cols="50" rows="15" maxlength="10000" wrap="soft"></textarea><br>
+					<button type="submit">posten</button>
+					<button id="blogakt" type="button">Blog aktualisieren</button>
+				</div>
+
+				<div id="blogs">
+
+				<p id="blog_Text"></p>
+
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

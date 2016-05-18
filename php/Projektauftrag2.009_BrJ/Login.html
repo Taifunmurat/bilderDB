@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="stylesheet.css">
+		<title>Login</title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="anmeldung.js"></script>
+		<?php include("login.php"); ?>
+	</head>
+	<body>
+		<div class="sites">
+			<form id="login">
+				<nav class="navigation">
+					<a id="Login" href="Login.html">Login</a>
+					<a id="Registration" href="Index.html">Registration</a>
+					<a id="Blog" href="Blog.html">Blog</a>
+					<a id="Logout">Logout</a>
+				</nav>
+				<h1>Login</h1>
+				<div id="errorspace">
+				</div>
+				<div id="informationspace">
+				</div>
+
+				<div class="labels">
+					<label for="Benutzername">Benutzername:</label><br>
+					<label for="Passwort">Passwort:</label><br>
+				</div>
+				<div class="inputs">
+					<input type="email" name="Benutzername" id="username" required><br>
+					<input type="password" name="Passwort" id="password" required><br>
+					<button type="submit">senden</button>
+					<button type="reset" onclick="Reset("2");">zurücksetzen</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

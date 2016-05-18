@@ -1,0 +1,111 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	max-width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav{
+	margin-top: 2px;
+}
+
+.navigation a{
+	margin-right: 2px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 5px;
+	background-color: #B45F04;
+}
+
+a:link{
+	color: black;
+	text-decoration: none;
+}
+
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: white;
+}
+
+.sites{
+	text-align: center;
+	padding-bottom: 5%;
+	background: #FFE270;
+	border: 2px solid;
+  border-radius: 25px;
+  line-height: 1.5;
+}
+
+label{
+	line-height: 1.5;
+}
+
+input{
+	max-width: 60%;
+}
+
+.labels{
+	margin-left: 20%;
+	text-align: left;
+	float: left;
+}
+
+.inputs{
+	text-align: left;
+	padding-left: 50%;
+}
+
+.hobbys1{
+	float: left;
+}
+
+#errorspace{
+	padding-left: 20%;
+	padding-bottom: 2%;
+	color: red;
+	text-align: left;
+}
+
+#informationspace{
+	padding-left: 20%;
+	padding-top: 2%;
+	text-align: left;
+}
+
+#errorspace2{
+	padding-left: 20%;
+	padding-bottom: 2%;
+	color: red;
+	text-align: left;
+}
+
+#errorspace3{
+	padding-left: 20%;
+	padding-bottom: 2%;
+	color: red;
+	text-align: left;
+}
+
+#informationspace2{
+	padding-left: 20%;
+	padding-top: 2%;
+	text-align: left;
+}
+
+#informationspace3{
+	padding-left: 20%;
+	padding-top: 2%;
+	text-align: left;
+}
+
+#blogs {
+	text-align: justify;
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	word-wrap: break-word;
+}
