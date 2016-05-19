@@ -1,5 +1,5 @@
 <?php
-    include("basic_functions.php");
+
 
 /*
  *  @autor Michael Abplanalp
@@ -12,6 +12,7 @@
  */
 
 function db_insert_benutzer($params, $passwort) {
+    
     $sql = "insert into benutzer (vorname, nachname, email, passwort)
             values ('".escapeSpecialChars($params['vorname'])."','".escapeSpecialChars($params['nachname'])."','".escapeSpecialChars($params['email'])."','".$passwort."')";
     sqlQuery($sql);

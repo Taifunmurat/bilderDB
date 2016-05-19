@@ -20,12 +20,24 @@
  * @param     $params       Assoziativer Array mit Werten, welche im Template eingefügt werden.
  *                          key: Name der Variable, value: Wert
  */
+
+function filterString($string){
+    if ($string != null && strlen($string) != 0){
+
+
+    }
+}
+
+
+
+
+
 function runTemplate($template) {
-	ob_start();
-	include($template);
-	$inhalt=ob_get_contents();
-	ob_end_clean();
-	return $inhalt;
+    ob_start();
+    include($template);
+    $inhalt=ob_get_contents();
+    ob_end_clean();
+    return $inhalt;
 }
 
 /*
@@ -59,8 +71,8 @@ function setValues($list) {
  * Liefert die über den Parameter "id" definierte Funktion zurück
 */
 function getId() {
-	if (isset($_REQUEST['id'])) return $_REQUEST['id'];
-	else return "";
+    if (isset($_REQUEST['id'])) return $_REQUEST['id'];
+    else return "";
 }
 
 /*
@@ -71,8 +83,8 @@ function getId() {
  */
 function getValue($key) {
     global $params;
-	if (isset($params[$key])) return $params[$key];
-	else return "";
+    if (isset($params[$key])) return $params[$key];
+    else return "";
 }
 
 /*
@@ -83,8 +95,8 @@ function getValue($key) {
  */
 function getHtmlValue($key) {
     global $params;
-	if (isset($params[$key])) return htmlentities($params[$key]);
-	else return "";
+    if (isset($params[$key])) return htmlentities($params[$key]);
+    else return "";
 }
 
 /*
@@ -93,25 +105,25 @@ function getHtmlValue($key) {
  * @param   $title      Menutitel
  */
 function getMenu($mlist, $title="") {
-	$loginMenu = isLoginMenu();
+    $loginMenu = isLoginMenu();
     if (count($mlist)) {
         $active_link = getId();
         if (empty($active_link)) $active_link=key($mlist);
         $printmenu = "<table border='0' class='table_menu'>\n";
         if (!empty($title)) $printmenu .= "<tr><th align='left'>$title</th></tr>\n";
-		if ($loginMenu) {
-			foreach ($mlist as $index=>$value) {
-				if ($index == $active_link) $active = "id='active'";
-				else $active = "";
-				$printmenu .= "<tr><td nowrap><a class='link_menu' $active href='".$_SERVER['PHP_SELF']."?id=$index'>$value</a></td></tr>\n";
-			}
-		} else {
-			$menuEntry = getValue('cfg_menu_level_member');
-			foreach ($mlist as $index=>$value) {
-				if ($index == $active_link) $active = "id='active'";
-				else $active = "";
-				$printmenu .= "<tr><td nowrap><a class='link_menu' $active href='".$_SERVER['PHP_SELF']."?id=$index'>$value</a></td></tr>\n";
-			}
+        if ($loginMenu) {
+            foreach ($mlist as $index=>$value) {
+                if ($index == $active_link) $active = "id='active'";
+                else $active = "";
+                $printmenu .= "<tr><td nowrap><a class='link_menu' $active href='".$_SERVER['PHP_SELF']."?id=$index'>$value</a></td></tr>\n";
+            }
+        } else {
+            $menuEntry = getValue('cfg_menu_level_member');
+            foreach ($mlist as $index=>$value) {
+                if ($index == $active_link) $active = "id='active'";
+                else $active = "";
+                $printmenu .= "<tr><td nowrap><a class='link_menu' $active href='".$_SERVER['PHP_SELF']."?id=$index'>$value</a></td></tr>\n";
+            }
         }
         $printmenu .= "</table>\n";
     }
@@ -122,8 +134,8 @@ function getMenu($mlist, $title="") {
  * Prüft, ob es sich um das Login-Menu handelt (ansonsten = Member-Menu)
  */
 function isLoginMenu() {
-  if (getValue('menu_eintraege') == "cfg_menu_login") return true;
-  else return false;
+    if (getValue('menu_eintraege') == "cfg_menu_login") return true;
+    else return false;
 }
 
 /*
@@ -144,8 +156,8 @@ function setSessionValue($key, $value) {
  *
  */
 function getSessionValue($key) {
-	if (isset($_SESSION[$key])) return $_SESSION[$key];
-	else return "";
+    if (isset($_SESSION[$key])) return $_SESSION[$key];
+    else return "";
 }
 
 /**
@@ -154,7 +166,7 @@ function getSessionValue($key) {
  * @param   $attribut       Attribut, das in eine Tabelle eingefügt werden soll
  */
 function escapeSpecialChars($attribut) {
-	return mysqli_real_escape_string(getValue('cfg_db'), $attribut);
+    return mysqli_real_escape_string(mysqli_connect("127.0.0.1", "root", "", "bilderdb")/*getValue('cfg_db')*/, $attribut);
 }
 
 /**
@@ -163,11 +175,12 @@ function escapeSpecialChars($attribut) {
  * @param   $sql       Select-Befehl, welcher ausgeführt werden soll
  */
 function sqlSelect($sql) {
-	$data = "";
- 	$result = mysqli_query(getValue('cfg_db'), $sql);
- 	if (!$result ) die("Fehler: ".mysqli_error());
- 	while ($row=mysqli_fetch_assoc($result)) $data[]=$row;
-	return $data;
+   
+    $data = "";
+    $result = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "bilderdb"), $sql);
+    if (!$result ) die("Fehler: ".mysqli_error());
+    while ($row=mysqli_fetch_assoc($result)) $data[]=$row;
+    return $data;
 }
 
 /**
@@ -175,9 +188,9 @@ function sqlSelect($sql) {
  *
  * @param   $sql    SQL-Befehl, welcher ausgeführt werden soll
  */
- function sqlQuery($sql) {
-	$result = mysqli_query(getValue('cfg_db'), $sql);
- 	if (!$result) die(mysqli_error(getValue('cfg_db'))."<pre>".$sql."</pre>");
+function sqlQuery($sql) {
+    $result = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "bilderdb"), $sql);
+    if (!$result) die(mysqli_error(mysqli_connect("127.0.0.1", "root", "", "bilderdb"))."<pre>".$sql."</pre>");
 }
 
 /**
@@ -242,7 +255,7 @@ function CheckName($value, $empty='N') {
  * @param   $value      Eingabewert
  */
 function CheckPasswordFormat($value) {
-	$pattern_pw = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,20}$/';
+    $pattern_pw = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,20}$/';
     if (preg_match($pattern_pw, $value)) return true;
     else return false;
 }
@@ -255,7 +268,7 @@ function CheckPasswordFormat($value) {
  */
 function CheckPasswordCompare($value1, $value2) {
     if ($value2 == $value1) return true;
-	else return false;
+    else return false;
 }
 
 /*
@@ -265,22 +278,22 @@ function CheckPasswordCompare($value1, $value2) {
  *
 */
 function passwordHash($passwort) {
-	return password_hash($passwort, PASSWORD_BCRYPT);
+    return password_hash($passwort, PASSWORD_BCRYPT);
 }
 
 /*
  * Liefert den Wert des gewünschten Parameters zurück, der via POST bzw. GET übergeben worden ist
 */
 function getRequestParam($param) {
-	if (isset($_REQUEST[$param])) return $_REQUEST[$param];
-	else return "";
+    if (isset($_REQUEST[$param])) return $_REQUEST[$param];
+    else return "";
 }
 
 /*
  * Bereitet einen Text für die Ausbage in HTML vor
 */
 function htmlTextAufbereiten($value) {
-	return nl2br(htmlentities($value));
+    return nl2br(htmlentities($value));
 }
 
 /**
