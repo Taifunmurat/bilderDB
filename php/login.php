@@ -8,7 +8,15 @@
 	$password = md5($passwordv);
 	$check;
 
-	echo db_check_email($email);
+	
+	$benutzer= db_select_benutzer($email);
+	if ($benutzer[0]['email'] == $email){
+		if($benutzer[0]['passwort'] == $password){
+			$_SESSION['email'] = $email;
+			$_SESSION['benutzerId'] = $benutzer[0]['bid'];
+			echo "alleok";
+		}
+	}
 	/*
 	if(db_select_benutzer($email) == $password){
 		$_SESSION['email'] = $email;

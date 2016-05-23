@@ -19,11 +19,11 @@ function db_insert_benutzer($params, $passwort) {
 
 function db_check_email($email) {
     $sql = "select email from benutzer where email like '".$email."'";
-    sqlSelect($sql);
+    return sqlSelect($sql);
 }
 
 function db_select_benutzer($email) {
-    $sql = "select bid, passwort from benutzer where email like '".$email."'";
+    $sql = "select bid, vorname, nachname, email, passwort from benutzer where email like '".$email."'";
     return sqlSelect($sql);
 }
 
