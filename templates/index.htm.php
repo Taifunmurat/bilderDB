@@ -3,8 +3,10 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/javascript.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 	<title>Bilderdatenbank</title>
 </head>
 <body>

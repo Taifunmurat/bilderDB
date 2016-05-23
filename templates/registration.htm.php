@@ -5,22 +5,48 @@
     </div>
     <div id="informationspace">
     </div>
-    <div class="labels">
-        <label for="Benutzername">Benutzername:</label><br>
-        <label for="Vorname">Vorname:</label><br>
-        <label for="Nachname">Nachname:</label><br>
-        <label for="Passwort">Passwort:</label><br>
-        <label for="Passwortw">Passwort wiederholen:</label><br>
-    </div>
-    <div class="inputs">
-        <input type="email" name="Benutzername" id="username" required><br>
-        <input type="text" name="Vorname" id="firstname" required><br>
-        <input type="text" name="Nachname" id="lastname" required><br>
-        <input type="password" name="Passwort" id="password" required><br>
-        <input type="password" name="Passwortw" id="password2" required><br>
 
-        <button type="submit">senden</button>
-        <button type="reset" onclick="Reset();">zurücksetzen</button>
+    <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-4">
+            <input type="email" class="form-control" id="username" placeholder="Email">
+        </div>
     </div>
+    <br>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">Vorname</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="firstname" placeholder="Vorname">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label">Nachname</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="lastname" placeholder="Nachname">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="passwort" class="col-sm-2 control-label">Passwort</label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="password" placeholder="Passwort">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="passwort2" class="col-sm-2 control-label">Passwort wiederholen</label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="password2" placeholder="Passwort wiederholen">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">anmelden</button>
+            <button type="reset"  class="btn btn-default">zurücksetzen</button>
+        </div>
+    </div>
+    <br><br>
 
 </form>

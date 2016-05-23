@@ -190,7 +190,7 @@ function sqlSelect($sql) {
  */
 function sqlQuery($sql) {
     $result = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "bilderdb"), $sql);
-    if (!$result) die(mysqli_error(mysqli_connect("127.0.0.1", "root", "", "bilderdb"))."<pre>".$sql."</pre>");
+    if (!$result) die(mysqli_error(mysqli_connect("127.0.0.1", "root", "", "bilderdb"))."");
 }
 
 /**

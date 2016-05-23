@@ -1,6 +1,6 @@
 <?php
 	include("db_functions.php");
-include("basic_functions.php");
+	include("basic_functions.php");
 
 	$email = $_POST["postemail"];
 	$firstname = $_POST["postfirstname"];
@@ -8,26 +8,21 @@ include("basic_functions.php");
 	$passwordv = $_POST["postpassword"];
 	$password = md5($passwordv);
 
-	$emailcheck = "true";
-
-
+	$emailcheck = "false";
 
 	$param = array(
-		'vorname' => utf8_encode($firstname),
+		'vorname' => $firstname,
 		'nachname' => $lastname,
-		'email' => utf8_encode($email)
+		'email' => $email
 	);
 
-	setValues($param);
-	mysql_query("SET NAMES 'utf8'");
-	echo db_insert_benutzer($param, $password);
-	/*
-	if (db_check_email($email)){
+	if (db_check_email($email) <= 0){
+		setValues($param);
 		db_insert_benutzer($param, $password);
-	}else{
-		$emailcheck = "false";
+		$emailcheck = "true";
 	}
 
-	echo $emailcheck;*/
+
+	echo $emailcheck;
 
 ?>

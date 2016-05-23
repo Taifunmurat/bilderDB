@@ -155,8 +155,7 @@ $( document ).ready(function() {
                 if (data == "true") {
                     Meldung("Success", "Benutzer erfolgreich erfasst!");
                 }else{
-                    alert(data);/*
-                    Meldung("Exception", "E-Mail ist bereits vergeben!", "");*/
+                    Meldung("Exception", "E-Mail ist bereits vergeben!");
                 };
 
             });
@@ -167,16 +166,16 @@ $( document ).ready(function() {
     function Login (email, password){
         $.post("login.php",{postemail:email, postpassword:password},
             function(data){
-
-                if (data == "true"){
-                    Meldung("Success", "Sie wurden erfolgreich eingeloggt!", "2");
-                    window.location.href = "Blog.html";
-                    MeineDomain = location.host;
+                alert(data);
+                /*if (data == "true"){
+                    Meldung("Success", "Sie wurden erfolgreich eingeloggt!");
+                    //window.location.href = "Blog.html";
+                    //MeineDomain = location.host;
 
                 }else{
-                    Meldung("Exception", "E-Mail oder Passwort falsch!", "2");
+                    Meldung("Exception", "E-Mail oder Passwort falsch!");
 
-                }
+                }*/
 
             });
     }

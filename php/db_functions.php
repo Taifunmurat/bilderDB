@@ -12,7 +12,6 @@
  */
 
 function db_insert_benutzer($params, $passwort) {
-    
     $sql = "insert into benutzer (vorname, nachname, email, passwort)
             values ('".escapeSpecialChars($params['vorname'])."','".escapeSpecialChars($params['nachname'])."','".escapeSpecialChars($params['email'])."','".$passwort."')";
     sqlQuery($sql);
@@ -20,9 +19,11 @@ function db_insert_benutzer($params, $passwort) {
 
 function db_check_email($email) {
     $sql = "select email from benutzer where email like '".$email."'";
-    if (sqlSelect($sql) >= 1){
-        return false;
-    }else{
-        return true;
-    }
+    sqlSelect($sql);
 }
+
+function db_select_benutzer($email) {
+    $sql = "select bid, passwort from benutzer where email like '".$email."'";
+    return sqlSelect($sql);
+}
+
