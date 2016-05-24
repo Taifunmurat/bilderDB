@@ -166,16 +166,14 @@ $( document ).ready(function() {
     function Login (email, password){
         $.post("login.php",{postemail:email, postpassword:password},
             function(data){
-                alert(data);
-                /*if (data == "true"){
+                if (data == "true"){
                     Meldung("Success", "Sie wurden erfolgreich eingeloggt!");
                     //window.location.href = "Blog.html";
                     //MeineDomain = location.host;
 
                 }else{
                     Meldung("Exception", "E-Mail oder Passwort falsch!");
-
-                }*/
+                }
 
             });
     }

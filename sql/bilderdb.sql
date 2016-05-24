@@ -36,6 +36,29 @@ CREATE TABLE IF NOT EXISTS `benutzer` (
   `passwort` char(60) COLLATE utf8_german2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
 
+
+--
+-- Tabellenstruktur für Tabelle `fotoalben`
+--
+CREATE TABLE IF NOT EXISTS `fotoalben` (
+  `aid` int(11) NOT NULL ,
+  `name` varchar(255) COLLATE utf8_german2_ci DEFAULT NULL,
+  `bid` int(11) COLLATE utf8_german2_ci NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+
+
+--
+-- Tabellenstruktur für Tabelle `bilder`
+--
+
+CREATE TABLE IF NOT EXISTS `bilder` (
+  `pid` int(11) NOT NULL ,
+  `ptags` varchar(255) COLLATE utf8_german2_ci DEFAULT NULL,
+  `aid` int(11) COLLATE utf8_german2_ci NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+
 --
 -- Indizes der exportierten Tabellen
 --
@@ -48,14 +71,49 @@ ALTER TABLE `benutzer`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT für exportierte Tabellen
---
-
---
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
   MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT;
+
+
+--
+-- Indizes für die Tabelle `fotoalben`
+--
+ALTER TABLE `fotoalben`
+  ADD PRIMARY KEY (`aid`),
+  ADD FOREIGN KEY (`bid`) REFERENCES benutzer(`bid`),
+  ADD UNIQUE KEY `aid` (`aid`);
+
+
+--
+-- AUTO_INCREMENT für Tabelle `fotoalben`
+--
+ALTER TABLE `fotoalben`
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Indizes für die Tabelle `bilder`
+--
+ALTER TABLE `bilder`
+  ADD PRIMARY KEY (`pid`),
+  ADD FOREIGN KEY (`aid`) REFERENCES fotoalben(`aid`),
+  ADD UNIQUE KEY `pid` (`pid`);
+
+
+
+--
+-- AUTO_INCREMENT für Tabelle `bilder`
+--
+ALTER TABLE `bilder`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
+
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

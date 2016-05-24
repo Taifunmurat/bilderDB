@@ -14,14 +14,10 @@
 		if($benutzer[0]['passwort'] == $password){
 			$_SESSION['email'] = $email;
 			$_SESSION['benutzerId'] = $benutzer[0]['bid'];
-			echo "alleok";
+			echo "true";
 		}
 	}
-	/*
-	if(db_select_benutzer($email) == $password){
-		$_SESSION['email'] = $email;
-		$_SESSION['benutzerId'] =
-	}*/
+
 
 
 
