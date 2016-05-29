@@ -21,8 +21,34 @@ function registration() {
  */
 function login() {
 	// Das Forum wird ohne Angabe der Funktion aufgerufen bzw. es wurde auf die Schaltfläche "abbrechen" geklickt
+	if(isset($_REQUEST['submit'])){
+		if (authentication()){
+			return runTemplate("../templates/fotoalben.htm.php");
+		}
+
+	}
 	setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
 	return runTemplate( "../templates/login.htm.php" );
+}
+
+function authentication() {
+
+	$email = $_POST['email'];
+	$passwordf = $_POST['password'];
+	$password = md5($passwordf);
+
+	$benutzer= db_select_benutzer($email);
+	if ($benutzer[0]['email'] == $email){
+		if(CheckPasswordCompare($password,$benutzer[0]['password'])){
+			$_SESSION['email'] = $email;
+			$_SESSION['benutzerId'] = $benutzer[0]['bid'];
+			return true;
+		}else {
+			return false;
+		}
+	}else{
+		return false;
+	}
 }
 
 /*

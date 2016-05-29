@@ -35,7 +35,9 @@ $( document ).ready(function() {
         var email = $("#username").val();
         var password = $("#password").val();
         Login(email, password);
-        return false;
+        //$_REQUEST['id'] =
+        
+        return "../templates/fotoalben.htm.php";
     });
     //Benutzer wird ausgeloggt
     $("#Logout").click(function(){
