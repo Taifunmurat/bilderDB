@@ -31,6 +31,9 @@ function login() {
 	return runTemplate( "../templates/login.htm.php" );
 }
 
+/*
+ * Prüft ob die Benutzerangaben korrekt sind.
+ */
 function authentication() {
 
 	$email = $_POST['email'];
