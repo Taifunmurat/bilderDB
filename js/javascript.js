@@ -172,9 +172,13 @@ $( document ).ready(function() {
                     //window.location.href = "Blog.html";
                     //MeineDomain = location.host;
 
+                }else if (data == "false"){
+                        Meldung("Exception", "E-Mail oder Passwort falsch!");
                 }else{
-                    Meldung("Exception", "E-Mail oder Passwort falsch!");
+
                 }
+
+
 
             });
     }

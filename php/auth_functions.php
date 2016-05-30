@@ -28,6 +28,7 @@ function login() {
 	if (angemeldet()){
 		setValue('menu_titel', 'Hauptmenü');
 		setValue('menu_eintraege', 'cfg_menu_member');
+		setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
 		return runTemplate( "../templates/fotoalben.htm.php" );
 
 	}else{
