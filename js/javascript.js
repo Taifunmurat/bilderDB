@@ -9,6 +9,7 @@ $( document ).ready(function() {
     }
 
     $("#registration").submit(function(){
+        
         Meldung("All", "");
         var email = $("#username").val();
         var firstname = $ ("#firstname").val();
@@ -35,9 +36,6 @@ $( document ).ready(function() {
         var email = $("#username").val();
         var password = $("#password").val();
         Login(email, password);
-        //$_REQUEST['id'] =
-        
-        return "../templates/fotoalben.htm.php";
     });
     //Benutzer wird ausgeloggt
     $("#Logout").click(function(){
@@ -166,10 +164,11 @@ $( document ).ready(function() {
     }
     //Login Funktion
     function Login (email, password){
-        $.post("login.php",{postemail:email, postpassword:password},
+        $.post("../php/login.php",{postemail:email, postpassword:password},
             function(data){
                 if (data == "true"){
                     Meldung("Success", "Sie wurden erfolgreich eingeloggt!");
+                    $.post("..")
                     //window.location.href = "Blog.html";
                     //MeineDomain = location.host;
 

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if ($_SESSION['logedin'] == true) {
+	if ($_SESSION['benutzerId'] > 0) {
 		session_unset();
 		session_destroy();
 		echo "true";

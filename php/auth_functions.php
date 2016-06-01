@@ -21,20 +21,26 @@ function registration() {
  */
 function login() {
 	// Das Forum wird ohne Angabe der Funktion aufgerufen bzw. es wurde auf die Schaltfläche "abbrechen" geklickt
-	if(isset($_REQUEST['submit'])){
-		if (authentication()){
-			return runTemplate("../templates/fotoalben.htm.php");
-		}
+	/*if(isset($_REQUEST['submit'])){
 
+
+	}*/
+	if (angemeldet()){
+		setValue('menu_titel', 'Hauptmenü');
+		setValue('menu_eintraege', 'cfg_menu_member');
+		return runTemplate( "../templates/fotoalben.htm.php" );
+
+	}else{
+
+		setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+		return runTemplate( "../templates/login.htm.php" );
 	}
-	setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-	return runTemplate( "../templates/login.htm.php" );
 }
 
 /*
  * Prüft ob die Benutzerangaben korrekt sind.
  */
-function authentication() {
+function authentication($check) {
 
 	$email = $_POST['email'];
 	$passwordf = $_POST['password'];
