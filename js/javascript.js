@@ -31,12 +31,12 @@ $( document ).ready(function() {
         return false;
     });
     //Login wird aufgerufen
-    $("#login").submit(function(){
+    /*$("#login").submit(function(){
         Meldung("All", "");
         var email = $("#username").val();
         var password = $("#password").val();
         Login(email, password);
-    });
+    });*/
     //Benutzer wird ausgeloggt
     $("#Logout").click(function(){
         $.post("logout.php",{},
@@ -166,6 +166,7 @@ $( document ).ready(function() {
     function Login (email, password){
         $.post("../php/login.php",{postemail:email, postpassword:password},
             function(data){
+                alert(data);
                 if (data == "true"){
                     Meldung("Success", "Sie wurden erfolgreich eingeloggt!");
                     $.post("..")

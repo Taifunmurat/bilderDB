@@ -21,45 +21,37 @@ function registration() {
  */
 function login() {
 	// Das Forum wird ohne Angabe der Funktion aufgerufen bzw. es wurde auf die Schaltfläche "abbrechen" geklickt
-	/*if(isset($_REQUEST['submit'])){
+	if(isset($_REQUEST['submit'])){
+		$email = $_POST["username"];
+		$passwordv = $_POST["password"];
+		$password = md5($passwordv);
 
-
-	}*/
-	if (angemeldet()){
-		setValue('menu_titel', 'Hauptmenü');
-		setValue('menu_eintraege', 'cfg_menu_member');
-		setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-		return runTemplate( "../templates/fotoalben.htm.php" );
-
-	}else{
-
-		setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-		return runTemplate( "../templates/login.htm.php" );
+		$benutzer= db_select_benutzer($email);
+		if ($benutzer[0]['email'] == $email){
+			if($benutzer[0]['passwort'] == $password){
+				$_SESSION['email'] = $email;
+				$_SESSION["benutzerId"] = $benutzer[0]['bid'];
+				setValue('menu_titel', 'Hauptmenü');
+				setValue('menu_eintraege', 'cfg_menu_member');
+				setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+				return runTemplate( "../templates/fotoalben.htm.php" );
+			}else{
+				echo "Benutzername oder Passwort falsch.";
+				setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+				return runTemplate( "../templates/login.htm.php" );
+			}
+		}else{
+			echo "Benutzername oder Passwort falsch.";
+			setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+			return runTemplate( "../templates/login.htm.php" );
+		}
 	}
 }
 
 /*
  * Prüft ob die Benutzerangaben korrekt sind.
  */
-function authentication($check) {
 
-	$email = $_POST['email'];
-	$passwordf = $_POST['password'];
-	$password = md5($passwordf);
-
-	$benutzer= db_select_benutzer($email);
-	if ($benutzer[0]['email'] == $email){
-		if(CheckPasswordCompare($password,$benutzer[0]['password'])){
-			$_SESSION['email'] = $email;
-			$_SESSION['benutzerId'] = $benutzer[0]['bid'];
-			return true;
-		}else {
-			return false;
-		}
-	}else{
-		return false;
-	}
-}
 
 /*
  * Prüft, ob ein Benutzer angemeldet ist
