@@ -22,32 +22,41 @@ function registration() {
 function login() {
 	// Das Forum wird ohne Angabe der Funktion aufgerufen bzw. es wurde auf die Schaltfläche "abbrechen" geklickt
 	if(isset($_REQUEST['submit'])){
-		$email = $_POST["username"];
-		$passwordv = $_POST["password"];
-		$password = md5($passwordv);
 
-		$benutzer= db_select_benutzer($email);
-		if ($benutzer[0]['email'] == $email){
-			if($benutzer[0]['passwort'] == $password){
-				$_SESSION['email'] = $email;
-				$_SESSION["benutzerId"] = $benutzer[0]['bid'];
-				setValue('menu_titel', 'Hauptmenü');
-				setValue('menu_eintraege', 'cfg_menu_member');
-				setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-				return runTemplate( "../templates/fotoalben.htm.php" );
-			}else{
-				echo "Benutzername oder Passwort falsch.";
-				setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-				return runTemplate( "../templates/login.htm.php" );
-			}
-		}else{
-			echo "Benutzername oder Passwort falsch.";
+		if (checkLogindata()){
+			setValue('menu_titel', 'Hauptmenü');
+			setValue('menu_eintraege', 'cfg_menu_member');
 			setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-			return runTemplate( "../templates/login.htm.php" );
+			return runTemplate( "../templates/fotoalben.htm.php" );
 		}
 	}
-}
+	setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+	return runTemplate( "../templates/login.htm.php" );
+};
 
+
+
+
+
+function checkLogindata(){
+
+	$email = $_POST["username"];
+	$passwordv = $_POST["password"];
+	$password = md5($passwordv);
+
+	$benutzer= db_select_benutzer($email);
+	if ($benutzer[0]['email'] == $email) {
+		if ($benutzer[0]['passwort'] == $password) {
+			$_SESSION['email'] = $email;
+			$_SESSION["benutzerId"] = $benutzer[0]['bid'];
+		}else{
+			echo "Benutzername oder Passwort falsch!";
+		}
+
+	}else{
+		echo "Benutzername oder Passwort falsch!";
+	}
+}
 /*
  * Prüft ob die Benutzerangaben korrekt sind.
  */
@@ -59,5 +68,14 @@ function login() {
 function angemeldet() {
 	if (strlen(getSessionValue("benutzerId")) > 0) return true;
 	else return false;
+}
+
+function logout(){
+	session_destroy();
+	setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+	setValue('menu_titel', 'Login-Menü');
+	setValue('menu_eintraege', 'cfg_menu_login');
+	runTemplate( "../templates/login.htm.php" );
+
 }
 ?>
