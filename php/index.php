@@ -12,11 +12,12 @@
  *  Im Beispiel wird die Funktion "show" ausgeführt.
  */
 session_start();
+include("appl_functions.php");
 include("basic_functions.php");
 include("config.php");
 include("db_functions.php");
 include("auth_functions.php");
-include("appl_functions.php");
+
 
 // Anmeldung oder andere Sicherheitschecks, falls erwünscht!
 // anmeldung(), check_security(), etc.

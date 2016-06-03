@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `fotoalben` (
 
 CREATE TABLE IF NOT EXISTS `bilder` (
   `pid` int(11) NOT NULL ,
+  `pname` varchar(255) COLLATE utf8_german2_ci DEFAULT NULL,
   `ptags` varchar(255) COLLATE utf8_german2_ci DEFAULT NULL,
   `aid` int(11) COLLATE utf8_german2_ci NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;

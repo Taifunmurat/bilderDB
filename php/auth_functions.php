@@ -62,6 +62,8 @@ function login() {
 	if(isset($_REQUEST['submit'])){
 
 		if (checkLogindata()){
+			setValue('informationspace', 'Sie wurden erfolgreich eingeloggt!');
+
 			setValue('menu_titel', 'Hauptmenü');
 			setValue('menu_eintraege', 'cfg_menu_member');
 			setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
@@ -81,6 +83,7 @@ function checkLogindata(){
 	$email = $_POST["username"];
 	$passwordv = $_POST["password"];
 	$password = md5($passwordv);
+	$error = "";
 
 	if (CheckEmpty($email) && CheckEmpty($passwordv)){
 		$benutzer= db_select_benutzer($email);
@@ -89,12 +92,16 @@ function checkLogindata(){
 				$_SESSION['email'] = $email;
 				$_SESSION["benutzerId"] = $benutzer[0]['bid'];
 			}else{
-				echo "Benutzername oder Passwort falsch!";
+				$error = "Benutzername oder Passwort falsch!";
 			}
 
 		}else{
-			echo "Benutzername oder Passwort falsch!";
+			$error = "Benutzername oder Passwort falsch!";
 		}
+	}
+
+	if($error != ""){
+		setValue('errorspace', $error);
 	}
 }
 /*

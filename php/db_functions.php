@@ -17,13 +17,55 @@ function db_insert_benutzer($params, $passwort) {
     sqlQuery($sql);
 }
 
+function db_insert_album($params){
+    $sql = "insert into fotoalben (name, bid)
+            values ('".escapeSpecialChars($params['name'])."','".$params['bid']."')";
+    sqlQuery($sql);
+}
+
+function db_insert_foto($params){
+    $sql = "insert into bilder (pname, ptags, aid)
+            values ('".escapeSpecialChars($params['pname'])."','".escapeSpecialChars($params['ptags'])."','".escapeSpecialChars($params['aid'])."')";
+    sqlQuery($sql);
+}
+
+
+
+
+
+
+
+
+
 function db_check_email($email) {
     $sql = "select email from benutzer where email like '".$email."'";
     return sqlSelect($sql);
 }
 
+function db_check_fotoalbum($bid, $name){
+    $sql = "select aid, name from fotoalben where bid like '".$bid."' and name like '".$name."'";
+    return sqlSelect($sql);
+}
+
+
+
+
+
+
+
+
+
 function db_select_benutzer($email) {
     $sql = "select bid, vorname, nachname, email, passwort from benutzer where email like '".$email."'";
     return sqlSelect($sql);
 }
+
+function db_select_fotoalben($bid){
+    $sql = "select aid, name, bid from fotoalben where bid like '".$bid."'";
+    return sqlSelect($sql);
+}
+
+
+
+
 
