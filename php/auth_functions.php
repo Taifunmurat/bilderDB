@@ -11,6 +11,44 @@
  * Beinhaltet die Anwendungslogik zur Registration
  */
 function registration() {
+
+	if(isset($_REQUEST['submit'])){
+
+		$email = $_POST["email"];
+		$firstname = $_POST["firstname"];
+		$lastname = $_POST["lastname"];
+		$password1 = $_POST["password1"];
+		$password2 = $_POST["password2"];
+		$error = "";
+		$info="";
+
+		if(CheckEmpty($email) && db_check_email($email) > 0){
+			$error = "Die E-Mail-Adresse ist ungültig oder bereits registriert!<br>";
+		}elseif (!CheckEmailFormat($email)){
+			$error = "Der Benutzername muss eine valide E-Mail-Adresse enthalten!<br>";
+		}elseif (!CheckPasswordFormat($password1) && !CheckPasswordFormat($password2)){
+			$error = "Passwort-Anforderungen werden nicht erfüllt!<br> Das Passwort muss mindestens 9 Zeichen lang sein, <br>Gross- und Kleinbuchstaben, sowie Sonderzeichen enthalten!<br>";
+		}elseif (!CheckPasswordCompare($password1, $password2)){
+			$error = "Passwörter stimmen nicht überein!<br>";
+		}else{
+			$password = md5($password1);
+			$param = array(
+				'vorname' => $firstname,
+				'nachname' => $lastname,
+				'email' => $email
+			);
+			setValues($param);
+			db_insert_benutzer($param, $password);
+			$info = "Sie wurden erfolgreich registriert!";
+		}
+		if($error != ""){
+			setValue('errorspace', $error);
+		}elseif($info != ""){
+			setValue('informationspace', $info);
+		}
+	}
+
+
     // Template abfüllen und Resultat zurückgeben
     setValue( 'phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__ );
     return runTemplate( "../templates/registration.htm.php" );
@@ -44,17 +82,19 @@ function checkLogindata(){
 	$passwordv = $_POST["password"];
 	$password = md5($passwordv);
 
-	$benutzer= db_select_benutzer($email);
-	if ($benutzer[0]['email'] == $email) {
-		if ($benutzer[0]['passwort'] == $password) {
-			$_SESSION['email'] = $email;
-			$_SESSION["benutzerId"] = $benutzer[0]['bid'];
+	if (CheckEmpty($email) && CheckEmpty($passwordv)){
+		$benutzer= db_select_benutzer($email);
+		if ($benutzer[0]['email'] == $email) {
+			if ($benutzer[0]['passwort'] == $password) {
+				$_SESSION['email'] = $email;
+				$_SESSION["benutzerId"] = $benutzer[0]['bid'];
+			}else{
+				echo "Benutzername oder Passwort falsch!";
+			}
+
 		}else{
 			echo "Benutzername oder Passwort falsch!";
 		}
-
-	}else{
-		echo "Benutzername oder Passwort falsch!";
 	}
 }
 /*

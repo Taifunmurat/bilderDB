@@ -9,14 +9,14 @@
 				<div class="form-group">
 					<label for="username" class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-4">
-						<input type="email" class="form-control" name="username" placeholder="Email">
+						<input type="email" class="form-control" name="username" placeholder="Email" >
 					</div>
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="password" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-4">
-						<input type="password" class="form-control" name="password" placeholder="Passwort">
+						<input type="password" class="form-control" name="password" placeholder="Passwort" >
 					</div>
 				</div>
 				<br>

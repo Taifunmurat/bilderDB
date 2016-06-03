@@ -22,10 +22,25 @@
 			<tr>
 				<td class="nav" width="200" valign="top" align="center">
                     <?php echo getMenu(getValue(getValue('menu_eintraege')), getValue('menu_titel')); ?>
-				</td>	
+				</td>
+
 				<td class="content" width="804" valign="top" align="left">
                     <table border="0" width="100%" cellpadding="5" cellspacing="0">
-                        <tr><td> <?php echo getValue('inhalt');?> </td></tr>
+						<tr>
+							<td>
+								<div id="errorspace">
+									<?php echo getValue('errorspace');?>
+								</div>
+								<div id="informationspace">
+									<?php echo getValue('informationspace');?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<?php echo getValue('inhalt');?>
+							</td>
+						</tr>
                     </table>
                 </td>
 			</tr>
