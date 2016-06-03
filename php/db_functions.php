@@ -24,8 +24,8 @@ function db_insert_album($params){
 }
 
 function db_insert_foto($params){
-    $sql = "insert into bilder (pname, ptags, aid)
-            values ('".escapeSpecialChars($params['pname'])."','".escapeSpecialChars($params['ptags'])."','".escapeSpecialChars($params['aid'])."')";
+    $sql = "insert into bilder (pname, ptags, ppath aid)
+            values ('".$params['pname']."','".$params['ptags']."','".$params['ppath']."','".$params['aid']."')";
     sqlQuery($sql);
 }
 
@@ -62,6 +62,11 @@ function db_select_benutzer($email) {
 
 function db_select_fotoalben($bid){
     $sql = "select aid, name, bid from fotoalben where bid like '".$bid."'";
+    return sqlSelect($sql);
+}
+
+function db_select_albumid($name){
+    $sql = "select aid from fotoalben where name like '".$name."'";
     return sqlSelect($sql);
 }
 

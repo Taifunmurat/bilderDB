@@ -39,8 +39,9 @@ function fotoUpload(){
 
 
     if(isset($_REQUEST['submit'])){
-        $albumId = db_select_fotoalben($_SESSION['benutzerId'])[0]['aid'];
+        $albumId = db_select_albumid($_POST['albumName']);
         $tags = $_POST['tags'];
+        $name = $_POST['bildName'];
         $speicherVerzeichnis = "../bilder/";
         $thumbnailVerzeichnis = "../bilder/thumbnails/";
         $dateiname = pathinfo($_FILES['datei']['name'], PATHINFO_FILENAME);
@@ -68,46 +69,41 @@ function fotoUpload(){
                 $nr++;
             }
         }
+
+        $param = array(
+            'pname' => $name,
+            'ptags' => $tags,
+            'ppath' => $pfad,
+            'aid' => $albumId
+        );
+
+
+        db_insert_foto($param);
+        move_uploaded_file($_FILES['datei']['tmp_name'], $pfad);
+
+        thumbsErstellen($bildname, $speicherVerzeichnis, '../upload/thumbnails/', 100);
     }
 
+    function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth ){
 
+        $img = imagecreatefromjpeg( "{$pathToImages}{$Imagename}" );
+        $width = imagesx( $img );
+        $height = imagesy( $img );
 
+        // calculate thumbnail size
+        $new_width = $thumbWidth;
+        $new_height = floor( $height * ( $thumbWidth / $width ) );
 
+        // create a new temporary image
+        $tmp_img = imagecreatetruecolor( $new_width, $new_height );
 
+        // copy and resize old image into new image
+        imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
 
-
-
-
-
-
-
-
-
-
-
-
-
+        // save thumbnail into a file
+        imagejpeg( $tmp_img, "{$pathToThumbs}{$Imagename}" );
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
     return runTemplate( "../templates/fotoUpload.htm.php" );
 }

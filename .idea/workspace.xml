@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a78f48-34d7-479c-a882-a16014bd6d82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/albumAnzeigen.htm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/albumErstellen.htm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/fotoUpload.htm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/appl_functions.php" afterPath="$PROJECT_DIR$/php/appl_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/auth_functions.php" afterPath="$PROJECT_DIR$/php/auth_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/config.php" afterPath="$PROJECT_DIR$/php/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/db_functions.php" afterPath="$PROJECT_DIR$/php/db_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/index.php" afterPath="$PROJECT_DIR$/php/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/bilderdb.sql" afterPath="$PROJECT_DIR$/sql/bilderdb.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/fotoalben.htm.php" afterPath="$PROJECT_DIR$/templates/fotoalben.htm.php" />
     </list>
@@ -64,8 +58,8 @@
       <file leaf-file-name="appl_functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/appl_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state vertical-scroll-proportion="10.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,8 +68,8 @@
       <file leaf-file-name="basic_functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/basic_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.296295">
-              <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+            <state vertical-scroll-proportion="-8.962963">
+              <caret line="156" column="3" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="3" />
               <folding>
                 <element signature="e#6#171#0#PHP" expanded="true" />
               </folding>
@@ -86,25 +80,41 @@
       <file leaf-file-name="db_functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/db_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8268551">
-              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.40282685">
+              <caret line="27" column="83" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
               <folding>
-                <marker date="1464965387364" expanded="true" signature="340:568" placeholder="insert into benutzer... " />
-                <marker date="1464965387364" expanded="true" signature="641:696" placeholder="insert into fotoalben... " />
-                <marker date="1464965387364" expanded="true" signature="641:738" placeholder="insert into fotoalben... " />
-                <marker date="1464965387364" expanded="true" signature="641:758" placeholder="insert into fotoalben... " />
-                <marker date="1464965387364" expanded="true" signature="830:890" placeholder="insert into bilder... " />
-                <marker date="1464965387364" expanded="true" signature="830:933" placeholder="insert into bilder... " />
-                <marker date="1464965387364" expanded="true" signature="830:976" placeholder="insert into bilder... " />
-                <marker date="1464965387364" expanded="true" signature="830:977" placeholder="insert into bilder... " />
-                <marker date="1464965387364" expanded="true" signature="830:1016" placeholder="insert into bilder... " />
-                <marker date="1464965387364" expanded="true" signature="1096:1152" placeholder="select email... benutzer" />
-                <marker date="1464965387364" expanded="true" signature="1240:1323" placeholder="select aid, fotoalben" />
-                <marker date="1464965387364" expanded="true" signature="1415:1505" placeholder="select bid, benutzer" />
-                <marker date="1464965387364" expanded="true" signature="1587:1640" placeholder="select aid, fotoalben" />
-                <marker date="1464965387364" expanded="true" signature="1587:1649" placeholder="select aid, fotoalben" />
-                <marker date="1464965387364" expanded="true" signature="1587:1686" placeholder="select aid, fotoalben" />
-                <marker date="1464965387364" expanded="true" signature="1683:1686" placeholder="select aid, fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="340:568" placeholder="insert into benutzer... " />
+                <marker date="1464967181028" expanded="true" signature="641:696" placeholder="insert into fotoalben... " />
+                <marker date="1464967181028" expanded="true" signature="641:738" placeholder="insert into fotoalben... " />
+                <marker date="1464967181028" expanded="true" signature="641:758" placeholder="insert into fotoalben... " />
+                <marker date="1464967181028" expanded="true" signature="830:896" placeholder="insert into bilder... " />
+                <marker date="1464967181028" expanded="true" signature="830:919" placeholder="insert into bilder... " />
+                <marker date="1464967181028" expanded="true" signature="830:942" placeholder="insert into bilder... " />
+                <marker date="1464967181028" expanded="true" signature="830:943" placeholder="insert into bilder... " />
+                <marker date="1464967181028" expanded="true" signature="830:985" placeholder="insert into bilder... " />
+                <marker date="1464967181028" expanded="true" signature="1065:1121" placeholder="select email... benutzer" />
+                <marker date="1464967181028" expanded="true" signature="1209:1292" placeholder="select aid, fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1384:1474" placeholder="select bid, benutzer" />
+                <marker date="1464967181028" expanded="true" signature="1556:1609" placeholder="select aid, fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1556:1618" placeholder="select aid, fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1556:1789" placeholder="select aid, fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1699:1714" placeholder="select aid f... " />
+                <marker date="1464967181028" expanded="true" signature="1699:1742" placeholder="select aid f... fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1699:1752" placeholder="select aid f... fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1699:1753" placeholder="select aid f... fotoalben" />
+                <marker date="1464967181028" expanded="true" signature="1786:1789" placeholder="select aid, fotoalben" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/auth_functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.3333335">
+              <caret line="38" column="14" selection-start-line="34" selection-start-column="12" selection-end-line="38" selection-end-column="14" />
+              <folding>
+                <element signature="e#6#159#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/sql/bilderdb.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.107143">
-              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +133,8 @@
       <file leaf-file-name="fotoalben.htm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/fotoalben.htm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.333334">
-              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+            <state vertical-scroll-proportion="-16.0">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -133,8 +143,8 @@
       <file leaf-file-name="fotoUpload.htm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/fotoUpload.htm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state vertical-scroll-proportion="-2.0">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -145,16 +155,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.0">
               <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="albumErstellen.htm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/albumErstellen.htm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.6842103">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -193,14 +193,14 @@
         <option value="$PROJECT_DIR$/php/auth_functions.php" />
         <option value="$PROJECT_DIR$/php/index.php" />
         <option value="$PROJECT_DIR$/templates/albumErstellen.htm.php" />
-        <option value="$PROJECT_DIR$/templates/fotoalben.htm.php" />
         <option value="$PROJECT_DIR$/templates/albumAnzeigen.htm.php" />
         <option value="$PROJECT_DIR$/php/basic_functions.php" />
         <option value="$PROJECT_DIR$/templates/bildUpload.htm.php" />
         <option value="$PROJECT_DIR$/php/config.php" />
         <option value="$PROJECT_DIR$/templates/fotoUpload.htm.php" />
-        <option value="$PROJECT_DIR$/php/appl_functions.php" />
         <option value="$PROJECT_DIR$/sql/bilderdb.sql" />
+        <option value="$PROJECT_DIR$/php/appl_functions.php" />
+        <option value="$PROJECT_DIR$/templates/fotoalben.htm.php" />
         <option value="$PROJECT_DIR$/php/db_functions.php" />
       </list>
     </option>
@@ -849,7 +849,7 @@
       <workItem from="1464681578556" duration="4960000" />
       <workItem from="1464708487866" duration="3709000" />
       <workItem from="1464875612023" duration="4969000" />
-      <workItem from="1464934003496" duration="23802000" />
+      <workItem from="1464934003496" duration="25704000" />
     </task>
     <task id="LOCAL-00001" summary="Neue Funktionen">
       <created>1463989697661</created>
@@ -911,11 +911,17 @@
       <option name="project" value="LOCAL" />
       <updated>1464956415902</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fotos können fast hochgeladen werden">
+      <created>1464965467428</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1464965467428</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78970000" />
+    <option name="totallyTimeSpent" value="80872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1615" height="1054" extended-state="6" />
@@ -967,7 +973,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13480663" sideWeight="0.49231392" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13480663" sideWeight="0.49231392" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26607257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -994,7 +1000,8 @@
     <MESSAGE value="Login works" />
     <MESSAGE value="Added Bootstrap, fixed registration messages" />
     <MESSAGE value="Fotoalben können erfasst werden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fotoalben können erfasst werden" />
+    <MESSAGE value="Fotos können fast hochgeladen werden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fotos können fast hochgeladen werden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1297,16 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/auth_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.666666">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding>
-            <element signature="e#6#159#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.htm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.127273">
@@ -1339,24 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fotoalben.htm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.333334">
-          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/basic_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.296295">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-          <folding>
-            <element signature="e#6#171#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.333333">
@@ -1365,51 +1344,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fotoUpload.htm.php">
+    <entry file="file://$PROJECT_DIR$/php/auth_functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/appl_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="38" column="14" selection-start-line="34" selection-start-column="12" selection-end-line="38" selection-end-column="14" />
+          <folding>
+            <element signature="e#6#159#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/bilderdb.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.107143">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fotoUpload.htm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fotoalben.htm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.0">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/basic_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.962963">
+          <caret line="156" column="3" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#171#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/appl_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/db_functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8268551">
-          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.40282685">
+          <caret line="27" column="83" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
           <folding>
-            <marker date="1464965387364" expanded="true" signature="340:568" placeholder="insert into benutzer... " />
-            <marker date="1464965387364" expanded="true" signature="641:696" placeholder="insert into fotoalben... " />
-            <marker date="1464965387364" expanded="true" signature="641:738" placeholder="insert into fotoalben... " />
-            <marker date="1464965387364" expanded="true" signature="641:758" placeholder="insert into fotoalben... " />
-            <marker date="1464965387364" expanded="true" signature="830:890" placeholder="insert into bilder... " />
-            <marker date="1464965387364" expanded="true" signature="830:933" placeholder="insert into bilder... " />
-            <marker date="1464965387364" expanded="true" signature="830:976" placeholder="insert into bilder... " />
-            <marker date="1464965387364" expanded="true" signature="830:977" placeholder="insert into bilder... " />
-            <marker date="1464965387364" expanded="true" signature="830:1016" placeholder="insert into bilder... " />
-            <marker date="1464965387364" expanded="true" signature="1096:1152" placeholder="select email... benutzer" />
-            <marker date="1464965387364" expanded="true" signature="1240:1323" placeholder="select aid, fotoalben" />
-            <marker date="1464965387364" expanded="true" signature="1415:1505" placeholder="select bid, benutzer" />
-            <marker date="1464965387364" expanded="true" signature="1587:1640" placeholder="select aid, fotoalben" />
-            <marker date="1464965387364" expanded="true" signature="1587:1649" placeholder="select aid, fotoalben" />
-            <marker date="1464965387364" expanded="true" signature="1587:1686" placeholder="select aid, fotoalben" />
-            <marker date="1464965387364" expanded="true" signature="1683:1686" placeholder="select aid, fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="340:568" placeholder="insert into benutzer... " />
+            <marker date="1464967181028" expanded="true" signature="641:696" placeholder="insert into fotoalben... " />
+            <marker date="1464967181028" expanded="true" signature="641:738" placeholder="insert into fotoalben... " />
+            <marker date="1464967181028" expanded="true" signature="641:758" placeholder="insert into fotoalben... " />
+            <marker date="1464967181028" expanded="true" signature="830:896" placeholder="insert into bilder... " />
+            <marker date="1464967181028" expanded="true" signature="830:919" placeholder="insert into bilder... " />
+            <marker date="1464967181028" expanded="true" signature="830:942" placeholder="insert into bilder... " />
+            <marker date="1464967181028" expanded="true" signature="830:943" placeholder="insert into bilder... " />
+            <marker date="1464967181028" expanded="true" signature="830:985" placeholder="insert into bilder... " />
+            <marker date="1464967181028" expanded="true" signature="1065:1121" placeholder="select email... benutzer" />
+            <marker date="1464967181028" expanded="true" signature="1209:1292" placeholder="select aid, fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1384:1474" placeholder="select bid, benutzer" />
+            <marker date="1464967181028" expanded="true" signature="1556:1609" placeholder="select aid, fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1556:1618" placeholder="select aid, fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1556:1789" placeholder="select aid, fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1699:1714" placeholder="select aid f... " />
+            <marker date="1464967181028" expanded="true" signature="1699:1742" placeholder="select aid f... fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1699:1752" placeholder="select aid f... fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1699:1753" placeholder="select aid f... fotoalben" />
+            <marker date="1464967181028" expanded="true" signature="1786:1789" placeholder="select aid, fotoalben" />
           </folding>
         </state>
       </provider>

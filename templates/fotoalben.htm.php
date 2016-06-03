@@ -22,9 +22,14 @@
 
               $fotoalben = getValue('fotoalben');
 
-              for ($x = 0; $x < count($fotoalben); ++$x){
-                  echo "<td>".$fotoalben[$x]['name']." </td><td>$fotoalben[$x]['aid']</td></tr><tr>";
+              if ($fotoalben != ""){
+
+                for ($x = 0; $x < count($fotoalben); ++$x){
+                  echo "<td>".$fotoalben[$x]['name']." </td></tr><tr>";
+                }
+
               }
+
 
 
 
