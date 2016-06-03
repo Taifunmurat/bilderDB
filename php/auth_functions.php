@@ -75,7 +75,7 @@ function logout(){
 	setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
 	setValue('menu_titel', 'Login-Menü');
 	setValue('menu_eintraege', 'cfg_menu_login');
-	runTemplate( "../templates/login.htm.php" );
+	return runTemplate( "../templates/logout.htm.php" );
 
 }
 ?>

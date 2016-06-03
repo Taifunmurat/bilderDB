@@ -162,27 +162,6 @@ $( document ).ready(function() {
 
 
     }
-    //Login Funktion
-    function Login (email, password){
-        $.post("../php/login.php",{postemail:email, postpassword:password},
-            function(data){
-                alert(data);
-                if (data == "true"){
-                    Meldung("Success", "Sie wurden erfolgreich eingeloggt!");
-                    $.post("..")
-                    //window.location.href = "Blog.html";
-                    //MeineDomain = location.host;
-
-                }else if (data == "false"){
-                        Meldung("Exception", "E-Mail oder Passwort falsch!");
-                }else{
-
-                }
-
-
-
-            });
-    }
 
     // Generiert Fehler- und Erfolgsmeldungen
     function Meldung (typ, meldung){
