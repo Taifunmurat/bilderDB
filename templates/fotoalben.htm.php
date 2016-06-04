@@ -12,7 +12,6 @@
           <thead>
           <tr>
             <th>Alben:</th>
-            <th>Album öffnen:</th>
           </tr>
           </thead>
           <tbody>
@@ -29,10 +28,6 @@
                 }
 
               }
-
-
-
-
             ?>
 
           </tr>

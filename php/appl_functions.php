@@ -39,7 +39,7 @@ function fotoUpload(){
 
 
     if(isset($_REQUEST['submit'])){
-        $albumId = db_select_albumid($_POST['albumName']);
+        $albumId = db_select_albumid($_POST['albumName'])[0]['aid'];
         $tags = $_POST['tags'];
         $name = $_POST['bildName'];
         $speicherVerzeichnis = "../bilder/";
@@ -77,14 +77,16 @@ function fotoUpload(){
             'aid' => $albumId
         );
 
-
         db_insert_foto($param);
         move_uploaded_file($_FILES['datei']['tmp_name'], $pfad);
 
-        thumbsErstellen($bildname, $speicherVerzeichnis, '../upload/thumbnails/', 100);
+        thumbsErstellen($bildname, $speicherVerzeichnis, '../bilder/thumbnails/', 100);
     }
+    setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+    return runTemplate( "../templates/fotoUpload.htm.php" );
+}
 
-    function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth ){
+function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth ){
 
         $img = imagecreatefromjpeg( "{$pathToImages}{$Imagename}" );
         $width = imagesx( $img );
@@ -103,10 +105,8 @@ function fotoUpload(){
         // save thumbnail into a file
         imagejpeg( $tmp_img, "{$pathToThumbs}{$Imagename}" );
 
-    }
-    setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
-    return runTemplate( "../templates/fotoUpload.htm.php" );
 }
+
 
 function albumAnzeigen(){
 

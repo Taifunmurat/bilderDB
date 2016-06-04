@@ -24,8 +24,8 @@ function db_insert_album($params){
 }
 
 function db_insert_foto($params){
-    $sql = "insert into bilder (pname, ptags, ppath aid)
-            values ('".$params['pname']."','".$params['ptags']."','".$params['ppath']."','".$params['aid']."')";
+    $sql = "insert into bilder (pname, ptags, ppath, aid)
+            values ('".escapeSpecialChars($params['pname'])."','".escapeSpecialChars($params['ptags'])."','".escapeSpecialChars($params['ppath'])."','".escapeSpecialChars($params['aid'])."')";
     sqlQuery($sql);
 }
 

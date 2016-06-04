@@ -12,8 +12,10 @@
  */
 function registration() {
 
-	if(isset($_REQUEST['submit'])){
+	//Prüft ob der Registrierungs-Button gedrückt wurde
 
+	if(isset($_REQUEST['submit'])){
+		//Die Variabeln für die Registration werden gesetzt.
 		$email = $_POST["email"];
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
@@ -21,7 +23,7 @@ function registration() {
 		$password2 = $_POST["password2"];
 		$error = "";
 		$info="";
-
+		//Prüft ob die Angaben des Benutzer valid sind
 		if(CheckEmpty($email) && db_check_email($email) > 0){
 			$error = "Die E-Mail-Adresse ist ungültig oder bereits registriert!<br>";
 		}elseif (!CheckEmailFormat($email)){
@@ -37,6 +39,7 @@ function registration() {
 				'nachname' => $lastname,
 				'email' => $email
 			);
+			//Speichert die Daten des Benutzers in der Datenbank
 			setValues($param);
 			db_insert_benutzer($param, $password);
 			$info = "Sie wurden erfolgreich registriert!";
