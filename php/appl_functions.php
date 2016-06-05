@@ -28,16 +28,12 @@ function fotoalben() {
     $alben = db_select_fotoalben($_SESSION['benutzerId']);
     setValue('fotoalben', $alben);
 
-
-
-
     setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
     return runTemplate( "../templates/fotoalben.htm.php" );
 }
 
 function fotoUpload(){
     if(isset($_REQUEST['submit'])){
-
         $albumId = db_select_albumid($_POST['albumName'] , $_SESSION['benutzerId'])[0]['aid'];
         $tags = "alle, ".$_POST['tags']."";
         $name = $_POST['bildName'];
@@ -80,16 +76,32 @@ function fotoUpload(){
         db_insert_foto($param);
         move_uploaded_file($_FILES['datei']['tmp_name'], $pfad);
 
-        thumbsErstellen($bildname, $speicherVerzeichnis, '../bilder/thumbnails/', 100);
+        thumbsErstellen($bildname, $speicherVerzeichnis, '../bilder/thumbnails/', 100, $dateiendung);
     }
     setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
     return runTemplate( "../templates/fotoUpload.htm.php" );
 }
 
-function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth ){
+function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth, $dateiendung ){
 
-        $img = imagecreatefromjpeg( "{$pathToImages}{$Imagename}" );
-        $width = imagesx( $img );
+        //$img = imagecreatefromjpeg( "{$pathToImages}{$Imagename}" );
+        echo $dateiendung;
+        switch ($dateiendung) {
+            case "gif" :
+                $img = imageCreateFromGif( "{$pathToImages}{$Imagename}" );
+                break;
+            case "jpeg" :
+                $img = imageCreateFromJpeg( "{$pathToImages}{$Imagename}" );
+                break;
+            case "png" :
+                $img = imageCreateFromPng( "{$pathToImages}{$Imagename}" );
+                break;
+            case "jpg" :
+                $img = imageCreateFromJpeg( "{$pathToImages}{$Imagename}" );
+                break;
+        }
+
+    $width = imagesx( $img );
         $height = imagesy( $img );
 
         // calculate thumbnail size
