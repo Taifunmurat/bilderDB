@@ -39,8 +39,9 @@ function fotoUpload(){
 
 
     if(isset($_REQUEST['submit'])){
-        $albumId = db_select_albumid($_POST['albumName'])[0]['aid'];
-        $tags = $_POST['tags'];
+        $albumId = db_select_albumid($_POST['albumName'] , $_SESSION['benutzerId'])[0]['aid'];
+
+        $tags = "alle, ".$_POST['tags']."";
         $name = $_POST['bildName'];
         $speicherVerzeichnis = "../bilder/";
         $thumbnailVerzeichnis = "../bilder/thumbnails/";
@@ -74,6 +75,7 @@ function fotoUpload(){
             'pname' => $name,
             'ptags' => $tags,
             'ppath' => $pfad,
+            'dpath' => $thumbnailPfad,
             'aid' => $albumId
         );
 
@@ -109,6 +111,39 @@ function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth 
 
 
 function albumAnzeigen(){
+
+    if (isset($_REQUEST['submit'])){
+        $albumName = $_POST['albumName'];
+        $albumTags = $_POST['albumTag'];
+        $aid = db_select_albumid($albumName, $_SESSION['benutzerId'])[0]['aid'];
+        $pid = $_SESSION['benutzerId'];
+
+        $bilder = db_select_fotos($aid, $pid);
+
+
+        $alben = array();
+
+        if (!empty($bilder)){
+            for ($x = 0; $x < count($bilder); ++$x){
+                if (strpos($bilder[$x]['ptags'], $albumTags) != false){
+                    $bildName = $bilder[$x]['pname'];
+                    $bildPfad = $bilder[$x]['ppath'];
+                    $thumbnailPfad = $bilder[$x]['dpath'];
+
+                    echo "<a href='".$bildPfad."' title='".$bildName."' data-gallery>
+                    <img src='".$thumbnailPfad."' alt='".$bildName."'>
+                    </a>";
+
+
+
+
+
+                }
+
+            }
+        }
+
+    }
 
 
 
@@ -155,6 +190,12 @@ function albumErstellen(){
     // Template abfüllen und Resultat zurückgeben
     setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
     return runTemplate( "../templates/albumErstellen.htm.php" );
+}
+
+
+function fotoLoeschen($pfad){
+
+
 }
 
 ?>

@@ -4,9 +4,15 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/javascript.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+	<script src="js/bootstrap-image-gallery.min.js"></script>
 	<title>Bilderdatenbank</title>
 </head>
 <body>

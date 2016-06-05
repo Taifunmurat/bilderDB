@@ -24,8 +24,8 @@ function db_insert_album($params){
 }
 
 function db_insert_foto($params){
-    $sql = "insert into bilder (pname, ptags, ppath, aid)
-            values ('".escapeSpecialChars($params['pname'])."','".escapeSpecialChars($params['ptags'])."','".escapeSpecialChars($params['ppath'])."','".escapeSpecialChars($params['aid'])."')";
+    $sql = "insert into bilder (pname, ptags, ppath, dpath, aid)
+            values ('".escapeSpecialChars($params['pname'])."','".escapeSpecialChars($params['ptags'])."','".escapeSpecialChars($params['ppath'])."','".escapeSpecialChars($params['dpath'])."','".escapeSpecialChars($params['aid'])."')";
     sqlQuery($sql);
 }
 
@@ -65,10 +65,17 @@ function db_select_fotoalben($bid){
     return sqlSelect($sql);
 }
 
-function db_select_albumid($name){
-    $sql = "select aid from fotoalben where name like '".$name."'";
+function db_select_albumid($name, $bid){
+    $sql = "select aid from fotoalben where name like '".$name."' and bid like '".$bid."'";
     return sqlSelect($sql);
 }
+
+function db_select_fotos($aid, $bid){
+
+    $sql = "select b.pname, b.ptags, b.ppath from bilder as b left join fotoalben as f on b.aid = f.aid where b.aid like '".$aid."' and f.bid like '".$bid."'";
+    return sqlSelect($sql);
+}
+
 
 
 
