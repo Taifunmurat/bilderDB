@@ -36,17 +36,16 @@ function fotoalben() {
 }
 
 function fotoUpload(){
-
-
     if(isset($_REQUEST['submit'])){
-        $albumId = db_select_albumid($_POST['albumName'] , $_SESSION['benutzerId'])[0]['aid'];
 
+        $albumId = db_select_albumid($_POST['albumName'] , $_SESSION['benutzerId'])[0]['aid'];
         $tags = "alle, ".$_POST['tags']."";
         $name = $_POST['bildName'];
         $speicherVerzeichnis = "../bilder/";
         $thumbnailVerzeichnis = "../bilder/thumbnails/";
         $dateiname = pathinfo($_FILES['datei']['name'], PATHINFO_FILENAME);
         $dateiendung = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
+
 
 
         //Datei Endung prüfen
@@ -63,7 +62,6 @@ function fotoUpload(){
         if(file_exists($pfad)) {
             $nr = 0;
             while(file_exists($pfad)) {
-
                 $pfad = $speicherVerzeichnis.$dateiname.'_'.$nr.'.'.$dateiendung;
                 $bildname = $dateiname.'_'.$nr.'.'.$dateiendung;
                 $thumbnailPfad = $thumbnailVerzeichnis.$dateiname.'_'.$nr.'.'.$dateiendung;
@@ -112,42 +110,8 @@ function thumbsErstellen( $Imagename, $pathToImages, $pathToThumbs, $thumbWidth 
 
 function albumAnzeigen(){
 
-    if (isset($_REQUEST['submit'])){
-        $albumName = $_POST['albumName'];
-        $albumTags = $_POST['albumTag'];
-        $aid = db_select_albumid($albumName, $_SESSION['benutzerId'])[0]['aid'];
-        $pid = $_SESSION['benutzerId'];
-
-        $bilder = db_select_fotos($aid, $pid);
-
-
-        $alben = array();
-
-        if (!empty($bilder)){
-            for ($x = 0; $x < count($bilder); ++$x){
-                if (strpos($bilder[$x]['ptags'], $albumTags) != false){
-                    $bildName = $bilder[$x]['pname'];
-                    $bildPfad = $bilder[$x]['ppath'];
-                    $thumbnailPfad = $bilder[$x]['dpath'];
-
-                    echo "<a href='".$bildPfad."' title='".$bildName."' data-gallery>
-                    <img src='".$thumbnailPfad."' alt='".$bildName."'>
-                    </a>";
-
-
-
-
-
-                }
-
-            }
-        }
-
-    }
-
-
-
-
+    
+    
     setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
     return runTemplate( "../templates/albumAnzeigen.htm.php" );
 
@@ -192,10 +156,16 @@ function albumErstellen(){
     return runTemplate( "../templates/albumErstellen.htm.php" );
 }
 
+function profil(){
 
-function fotoLoeschen($pfad){
+    if (!isset($_REQUEST['submit'])){
+        db_delete_benutzer($_SESSION['benutzerId']);
+        logout();
+    }
 
-
+    // Template abfüllen und Resultat zurückgeben
+    setValue('phpmodule', $_SERVER['PHP_SELF']."?id=".__FUNCTION__);
+    return runTemplate( "../templates/profil.htm.php" );
 }
 
 ?>

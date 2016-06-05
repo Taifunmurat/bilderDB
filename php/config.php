@@ -13,11 +13,11 @@ setValue('cfg_css_class_error',"err");
 // Akzeptierte Funktionen Login
 setValue('cfg_func_login', array("login","registration"));
 // Akzeptierte Funktionen Memberbereich
-setValue('cfg_func_member', array("albumErstellen", "fotoalben", "albumAnzeigen", "fotoUpload", "logout"));
+setValue('cfg_func_member', array("albumErstellen", "fotoalben", "albumAnzeigen", "fotoUpload", "profil", "logout"));
 // Inhalt des Login-Menus
 setValue('cfg_menu_login', array("login"=>"Login","registration"=>"Registration"));
 // Inhalt des Menus im Memberbereich
-setValue('cfg_menu_member', array("albumErstellen"=>"Album erstellen", "fotoUpload"=>"Foto hochladen", "fotoalben"=>"Fotoalben", "albumAnzeigen"=>"Album Anzeigen","logout"=>"Logout"));
+setValue('cfg_menu_member', array("albumErstellen"=>"Album erstellen", "fotoUpload"=>"Foto hochladen", "fotoalben"=>"Fotoalben", "albumAnzeigen"=>"Album Anzeigen","profil" => "Profil","logout"=>"Logout"));
 
 // Datenbankverbindung herstellen
 $db = mysqli_connect("127.0.0.1", "root", "", "bilderdb");	// Zu Datenbankserver verbinden

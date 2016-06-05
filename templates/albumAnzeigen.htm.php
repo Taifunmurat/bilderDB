@@ -1,6 +1,6 @@
 <form name="albumAnzeigen" id="albumAnzeigen" action="<?php echo getValue('phpmodule'); ?>" method="post">
     <h2>Album anzeigen</h2>
-
+    <br><br>
     <div class="form-group">
         <label for="albumName" class="col-sm-2 control-label">Albumname</label>
         <div class="col-sm-4">
@@ -8,7 +8,7 @@
         </div>
         <label for="albumTag" class="col-sm-2 control-label">Albumtags</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="albumTag" name="albumTag" placeholder="Tags" required>
+            <input type="text" class="form-control" id="albumTag" name="albumTag" placeholder="Tags">
         </div>
     </div>
     <br>
@@ -54,6 +54,49 @@
         </div>
     </div>
 </div>
+<div id="bilder">
+    <?php
+    if (isset($_REQUEST['submit'])){
+        $albumName = $_POST['albumName'];
+        $albumTags = $_POST['albumTag'];
+        $aid = db_select_albumid($albumName, $_SESSION['benutzerId'])[0]['aid'];
+        $pid = $_SESSION['benutzerId'];
+
+        $bilder = db_select_fotos($aid, $pid);
+
+        if ($albumTags == ""){
+            $albumTags == "alle";
+        }
+
+        $alben = array();
+
+        if (!empty($bilder)){
+            for ($x = 0; $x < count($bilder); ++$x){
+                if ($albumTags == "") {
+                    $bildName = $bilder[$x]['pname'];
+                    $bildPfad = $bilder[$x]['ppath'];
+                    $thumbnailPfad = $bilder[$x]['dpath'];
+
+                    echo "<a href='".$bildPfad."' title='".$bildName."' data-gallery>
+                    <img src='".$thumbnailPfad."' alt='".$bildName."'>
+                    </a>";
+                }else{
+                    if (strpos($bilder[$x]['ptags'], $albumTags) != false){
+                        $bildName = $bilder[$x]['pname'];
+                        $bildPfad = $bilder[$x]['ppath'];
+                        $thumbnailPfad = $bilder[$x]['dpath'];
+
+                        echo "<a href='".$bildPfad."' title='".$bildName."' data-gallery>
+                    <img src='".$thumbnailPfad."' alt='".$bildName."'>
+                    </a>";
+                    }
+                }
+            }
+        }
+    }
+    ?>
+</div>
+<!--
 <div id="links">
     <a href="../bilder/PICT0003.jpg" title="Banana" data-gallery>
         <img src="../bilder/thumbnails/PICT0003.jpg" alt="Banana">
@@ -64,4 +107,4 @@
     <a href="../bilder/BrÃ¶nnimann_Familienwappen.jpg" title="Orange" data-gallery>
         <img src="../bilder/thumbnails/BrÃ¶nnimann_Familienwappen.jpg" alt="Orange">
     </a>
-</div>
+</div>-->

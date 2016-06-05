@@ -72,8 +72,19 @@ function db_select_albumid($name, $bid){
 
 function db_select_fotos($aid, $bid){
 
-    $sql = "select b.pname, b.ptags, b.ppath from bilder as b left join fotoalben as f on b.aid = f.aid where b.aid like '".$aid."' and f.bid like '".$bid."'";
+    $sql = "select b.pname, b.ptags, b.ppath, b.dpath from bilder as b left join fotoalben as f on b.aid = f.aid where b.aid like '".$aid."' and f.bid like '".$bid."'";
     return sqlSelect($sql);
+}
+
+
+
+
+
+
+
+
+function db_delete_benutzer($bid){
+    $sql = "delete from benutzer where bid like '".$bid."'";
 }
 
 
