@@ -6,9 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67a78f48-34d7-479c-a882-a16014bd6d82" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/01-VW-Golf-main-image-upd-large_trans++3480UNUU8UfSxDSaY1n7MGcv5yZLmao6LolmWYJrXns.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/2014-suzuki-gsxr1000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/2016-BMW-M4-Competition-Package-INLINE.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/P1030669_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/index.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/index_3.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/appl_functions.php" afterPath="$PROJECT_DIR$/php/appl_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/fotoUpload.htm.php" afterPath="$PROJECT_DIR$/templates/fotoUpload.htm.php" />
     </list>
     <ignored path="bilderDB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -287,16 +291,6 @@
               <option name="myItemId" value="bilderDB" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bilderDB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bilderDB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -327,6 +321,30 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bilderDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bilderDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bilderDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bilderDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -791,7 +809,7 @@
       <workItem from="1464875612023" duration="4969000" />
       <workItem from="1464934003496" duration="25704000" />
       <workItem from="1465030843617" duration="28282000" />
-      <workItem from="1465154772666" duration="3535000" />
+      <workItem from="1465154772666" duration="3593000" />
     </task>
     <task id="LOCAL-00001" summary="Neue Funktionen">
       <created>1463989697661</created>
@@ -891,15 +909,22 @@
       <option name="project" value="LOCAL" />
       <updated>1465134267236</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="top">
+      <created>1465158533244</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1465158533244</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112689000" />
+    <option name="totallyTimeSpent" value="112747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -912,7 +937,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26599148" sideWeight="0.91527313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26599148" sideWeight="0.91527313" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05574136" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -977,7 +1002,8 @@
     <MESSAGE value="Fotos können fast hochgeladen werden" />
     <MESSAGE value="Fotos können hochgeladen werden" />
     <MESSAGE value="Bootstrap-Gallery import, SQL Anpassungen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bootstrap-Gallery import, SQL Anpassungen" />
+    <MESSAGE value="top" />
+    <option name="LAST_COMMIT_MESSAGE" value="top" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
